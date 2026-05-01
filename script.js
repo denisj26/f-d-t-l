@@ -20,14 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 5000);
     }
 
-    // 👇 ESTO ES LO QUE HACE QUE SIEMPRE SALGAN
     setInterval(crearEmoji, 100);
 });
 
-
-/* 🎉 CONFETI AL HACER CLICK */
+/* 🎉 Mostrar mensaje + confeti */
 function mostrarMensaje() {
     const extra = document.getElementById("extra");
+
     if (extra) {
         extra.style.display = "block";
     }
