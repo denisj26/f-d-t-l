@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
         var emoji = document.createElement("div");
         emoji.className = "heart";
         emoji.innerHTML = "🎉";
+        emoji.style.fontSize = (Math.random() * 40 + 30) + "px";
 
-        emoji.style.left = Math.random() * 100 + "vw";
+        
 
         container.appendChild(emoji);
 
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 4000);
     }
 
-    setInterval(crearEmoji, 200);
+    setInterval(crearEmoji, 50);
 });
 
 function mostrarMensaje() {
