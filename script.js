@@ -4,15 +4,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const botonSi = document.getElementById("botonSi");
 
     function createHeart() {
+        if (!heartsContainer) return;
+
         const heart = document.createElement("div");
         heart.classList.add("heart");
         heart.innerHTML = "🎉";
         heart.style.left = Math.random() * 100 + "vw";
         heart.style.animationDuration = (Math.random() * 2 + 3) + "s";
         heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+
         heartsContainer.appendChild(heart);
 
-        setTimeout(() => {
+        setTimeout(function () {
             heart.remove();
         }, 5000);
     }
@@ -21,8 +24,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (botonNo && botonSi) {
         botonNo.addEventListener("mouseover", function () {
-            const maxX = window.innerWidth - botonNo.offsetWidth - 20; 
-            const maxY = window.innerHeight - botonNo.offsetHeight - 20; 
+            const maxX = window.innerWidth - botonNo.offsetWidth - 20;
+            const maxY = window.innerHeight - botonNo.offsetHeight - 20;
 
             let x, y;
 
@@ -30,13 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 x = Math.random() * maxX;
                 y = Math.random() * maxY;
             } while (
-                Math.abs(x - botonSi.offsetLeft) < 100 && 
+                Math.abs(x - botonSi.offsetLeft) < 100 &&
                 Math.abs(y - botonSi.offsetTop) < 50
             );
 
             botonNo.style.position = "absolute";
-            botonNo.style.left = `${x}px`;
-            botonNo.style.top = `${y}px`;
+            botonNo.style.left = x + "px";
+            botonNo.style.top = y + "px";
         });
     }
 
