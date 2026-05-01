@@ -7,9 +7,12 @@ document.addEventListener("DOMContentLoaded", function () {
         var emoji = document.createElement("div");
         emoji.className = "heart";
         emoji.innerHTML = "🎉";
-        emoji.style.fontSize = (Math.random() * 40 + 30) + "px";
 
-        
+        // 🔥 POSICIÓN ALEATORIA
+        emoji.style.left = Math.random() * 100 + "vw";
+
+        // 🔥 TAMAÑO
+        emoji.style.fontSize = (Math.random() * 20 + 15) + "px";
 
         container.appendChild(emoji);
 
